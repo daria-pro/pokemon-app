@@ -4,21 +4,14 @@ import HomeView from '../views/HomeView.vue'
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'HomeView',
+    component: HomeView,
   },
   {
-    path: '/pokemon-home',
-    name: 'pokemon-home',
-    component: () => import('../views/PokemonHome.vue'),
-    children: [
-      {
-        path: '/pokemon-app/:slug',
-        name: 'pokemon',
-        component: () => import('../views/PokemonView.vue')
-      }
-    ]
-  },
+    path: '/pokemon/:slug',
+    name: 'Pokemon',
+    component: () => import('../views/PokemonView.vue')
+  }
 ]
 
 const router = createRouter({

@@ -1,6 +1,6 @@
 <template>
   <nav class="p-4" >    
-    <router-link to="/pokemon-app">Pokemon App</router-link>
+    <router-link class="flex justify-center text-4xl text-yellow-700" to="/">Pokemon Picker</router-link> 
   </nav>
   <router-view/>
 </template>
