@@ -26,7 +26,6 @@ export default {
     fetch(`https://pokeapi.co/api/v2/pokemon/${route.params.slug}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         state.pokemon = data;
       })
 

@@ -31,15 +31,13 @@ export default {
         if(!state.text) {
           return []
         }
-
         return state.pokemons.filter((pokemon) => 
-          pokemon.name.includes(state.text))
+          pokemon.name.includes(state.text.toLowerCase().trim()))
       }
 
       fetch("https://pokeapi.co/api/v2/pokemon?offset=0")
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
           state.pokemons = data.results;
           state.urlIdLookup = data.results.reduce((acc, cur, idx) => 
             acc = {...acc, [cur.name]:idx+1}
